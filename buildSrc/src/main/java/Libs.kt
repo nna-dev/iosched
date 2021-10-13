@@ -91,3 +91,7 @@ object Libs {
     const val VIEWPAGER2 = "androidx.viewpager2:viewpager2"
     const val UI_AUTOMATOR = "androidx.test.uiautomator:uiautomator"
 }
+
+object Plugins {
+    const val DETEKT = "io.gitlab.arturbosch.detekt"
+}

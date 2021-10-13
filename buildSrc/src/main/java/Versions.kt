@@ -36,4 +36,5 @@ object Versions {
     //  "org.threeten:threetenbp:${Versions.threetenbp}:no-tzdb" using java-platform in the
     //  depconstraints/build.gradle.kts is defined
     const val THREETENBP = "1.3.6"
+    const val DETEKT = "1.18.1"
 }

@@ -39,6 +39,7 @@ plugins {
     id("androidx.navigation.safeargs.kotlin")
     id("com.google.firebase.crashlytics")
     id("dagger.hilt.android.plugin")
+    id(Plugins.DETEKT).version(Versions.DETEKT)
 }
 
 android {
@@ -292,3 +293,19 @@ dependencies {
 }
 
 apply(plugin = "com.google.gms.google-services")
+
+detekt {
+    buildUponDefaultConfig = true
+    allRules = false
+    config = files("$rootDir/config/detekt.yml")
+    source = files("$rootDir/mobile")
+    reports {
+        html.enabled = true
+        xml.enabled = true
+        sarif.enabled = true
+    }
+}
+
+tasks.withType<io.gitlab.arturbosch.detekt.Detekt>() {
+    jvmTarget = "1.8"
+}
